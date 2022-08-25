@@ -12,9 +12,6 @@
   background-color: $gray;
   height: 100vh;
   width: 100vw;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   padding: 10.313rem;
   .grid__container {
     width: 1110px;
@@ -28,6 +25,7 @@
       box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378);
       border-radius: 8px;
       padding: 2rem;
+      position: relative;
       &.gray {
         background-color: $gray;
       }
@@ -48,6 +46,87 @@
       &.black {
         background-color: $black;
         grid-column: -4/-2;
+      }
+      .absolut-img{
+        position: absolute;
+        right: 80px;
+        top:0;
+      }
+      .grid__top--container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.063rem;
+        .grid__top-left {
+          .grid_img-profile {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 2px solid #a775f1;
+          }
+        }
+        .grid__top-right {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          flex-direction: column;
+          gap: 0.25rem;
+          .grid__top-title {
+            font-size: $font-size-md;
+            line-height: $font-height-s;
+            font-weight: $font-weight-medium;
+            color: $white;
+            &.white {
+              color: $dark-gray;
+            }
+          }
+          .grid__top-subtitle {
+            color: $white;
+            font-size: $font-size-s;
+            line-height: $font-height-xs;
+            font-weight: $font-weight-medium;
+            mix-blend-mode: normal;
+            color: $white;
+            opacity: 0.5;
+            &.white {
+              color: $dark-gray;
+            }
+          }
+        }
+      }
+      .grid__bottom--container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: relative;
+        z-index: 2;
+        .grid__bottom--description {
+          font-size: $font-size-lg;
+          line-height: $font-height-lg;
+          font-weight: $font-weight-bold;
+          color: $white;
+          &.white {
+            color: $dark-gray;
+          }
+        }
+        .grid__bottom--description-second {
+          line-height: $font-height-md;
+          font-size: $font-size-md;
+          font-weight: $font-weight-medium;
+          color: $white;
+          mix-blend-mode: normal;
+          opacity: 0.7;
+          &.white {
+            color: $dark-gray;
+          }
+          &.purple {
+            color: #cfcfcf;
+          }
+        }
       }
     }
   }
