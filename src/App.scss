@@ -13,6 +13,18 @@
   height: 100vh;
   width: 100vw;
   padding: 10.313rem;
+
+  @media (max-width: 1300px) {
+    padding: 5.313rem;
+  }
+
+  @media (max-width: 415px) {
+    padding: 4.375rem 1.5rem;
+    height: 1950px;
+  }
+
+
+
   .grid__container {
     width: 1110px;
     height: 572px;
@@ -21,42 +33,99 @@
     grid-gap: 1.875rem;
     grid-template-rows: 282px 266px;
     width: 100%;
+
+    @media (max-width: 1300px) {
+      grid-template-columns: repeat(autofit, minmax(15.938rem, 1fr));
+    }
+
+    @media (max-width: 415px) {
+      grid-template-columns: repeat(1, minmax(20.438rem, 1fr));
+      grid-template-rows: 240px;
+    }
+
     .grid__item {
       box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.247378);
       border-radius: 8px;
       padding: 2rem;
       position: relative;
+
       &.gray {
         background-color: $gray;
       }
+
       &.purple {
         background-color: $purple;
         grid-column: 1/3;
+
+        @media (max-width: 415px) {
+          grid-row: 1/3;
+          grid-column: auto;
+        }
       }
+
       &.dark-gray {
         background-color: $dark-gray;
       }
+
       &.white {
         background-color: $white;
+
         &.ki {
           grid-row: -3/-1;
           grid-column: 4/5;
+
+          @media (max-width: 1300px) {
+            grid-row: -2/-1;
+            grid-column: 1/4;
+          }
+
+          @media (max-width: 415px) {
+            grid-row: 6/7;
+            grid-column: auto;
+          }
+
+        }
+
+        &.ja {
+          @media (max-width: 1300px) {
+            grid-row: 4/5;
+            grid-column: 3/4;
+          }
+
+          @media (max-width: 415px) {
+            grid-row: auto;
+            grid-column: auto;
+          }
         }
       }
+
       &.black {
         background-color: $black;
         grid-column: -4/-2;
+
+        @media (max-width: 1300px) {
+          grid-row: 4/5;
+          grid-column: 1/3;
+        }
+
+        @media (max-width: 415px) {
+          grid-row: auto;
+          grid-column: auto;
+        }
       }
-      .absolut-img{
+
+      .absolut-img {
         position: absolute;
         right: 80px;
-        top:0;
+        top: 0;
       }
+
       .grid__top--container {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         gap: 1.063rem;
+
         .grid__top-left {
           .grid_img-profile {
             width: 28px;
@@ -67,21 +136,25 @@
             border: 2px solid #a775f1;
           }
         }
+
         .grid__top-right {
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
           flex-direction: column;
           gap: 0.25rem;
+
           .grid__top-title {
             font-size: $font-size-md;
             line-height: $font-height-s;
             font-weight: $font-weight-medium;
             color: $white;
+
             &.white {
               color: $dark-gray;
             }
           }
+
           .grid__top-subtitle {
             color: $white;
             font-size: $font-size-s;
@@ -90,12 +163,14 @@
             mix-blend-mode: normal;
             color: $white;
             opacity: 0.5;
+
             &.white {
               color: $dark-gray;
             }
           }
         }
       }
+
       .grid__bottom--container {
         display: flex;
         align-items: flex-start;
@@ -104,15 +179,18 @@
         gap: 1.5rem;
         position: relative;
         z-index: 2;
+
         .grid__bottom--description {
           font-size: $font-size-lg;
           line-height: $font-height-lg;
           font-weight: $font-weight-bold;
           color: $white;
+
           &.white {
             color: $dark-gray;
           }
         }
+
         .grid__bottom--description-second {
           line-height: $font-height-md;
           font-size: $font-size-md;
@@ -120,9 +198,11 @@
           color: $white;
           mix-blend-mode: normal;
           opacity: 0.7;
+
           &.white {
             color: $dark-gray;
           }
+
           &.purple {
             color: #cfcfcf;
           }
